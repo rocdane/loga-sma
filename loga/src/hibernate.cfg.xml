@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:./resources/loga</property>
+        <!--property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://gmcplus.org\SQLSERVERGMCPLUS;DatabaseName=loga;integratedSecurity=false;</property-->
+        <property name="hibernate.connection.username">loga</property>
+        <property name="hibernate.connection.password">Log@gmc+</property>
+        <property name="hibernate.connection.pool_size">20</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <property name="hibernate.legacy_limit_handler">true</property>
+        <property name="hibernate.dbcp.initialSize">20</property>
+        <property name="hibernate.dbcp.maxTotal">-1</property>
+        <property name="hibernate.dbcp.maxIdle">-1</property>
+        <property name="hibernate.dbcp.minIdle">0</property>
+        <property name="hibernate.dbcp.maxWaitMillis">1000</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <mapping class="com.loga.model.User"/>
+        <mapping class="com.loga.model.Log"/>
+        <mapping class="com.loga.model.Session"/>
+        <mapping class="com.loga.model.Client"/>
+        <mapping class="com.loga.model.Automobile"/>
+        <mapping class="com.loga.model.Dossier"/>
+        <mapping class="com.loga.model.Reception"/>
+        <mapping class="com.loga.model.Etat"/>
+        <mapping class="com.loga.model.Diagnostic"/>
+        <mapping class="com.loga.model.Defaut"/>
+        <mapping class="com.loga.model.Solution"/>
+        <mapping class="com.loga.model.Reparation"/>
+        <mapping class="com.loga.model.Tache"/>
+        <mapping class="com.loga.model.Fourniture"/>
+        <mapping class="com.loga.model.Commande"/>
+        <mapping class="com.loga.model.Livraison"/>
+        <mapping class="com.loga.model.Fournisseur"/>
+        <mapping class="com.loga.model.Versement"/>
+        <mapping class="com.loga.model.Qualite"/>
+        <mapping class="com.loga.model.Controle"/>
+        <mapping class="com.loga.model.Atelier"/>
+        <mapping class="com.loga.model.Service"/>
+        <mapping class="com.loga.model.Calendrier"/>
+        <mapping class="com.loga.model.Espace"/>
+        <mapping class="com.loga.model.Profile"/>
+        <mapping class="com.loga.model.Titre"/>
+        <mapping class="com.loga.model.Salaire"/>
+        <mapping class="com.loga.model.Evaluation"/>
+        <mapping class="com.loga.model.Critere"/>
+        <mapping class="com.loga.model.Tresor"/>
+        <mapping class="com.loga.model.Recette"/>
+        <mapping class="com.loga.model.Depense"/>
+        <mapping class="com.loga.model.Article"/>
+        <mapping class="com.loga.model.Achat"/>
+        <mapping class="com.loga.model.Vente"/>
+        <mapping class="com.loga.model.Immobilisation"/>
+    </session-factory>
+</hibernate-configuration>

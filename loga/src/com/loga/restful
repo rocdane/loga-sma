@@ -1,0 +1,11 @@
+@Path("/market")
+public class ManageService {
+    @POST
+    @Path("/calendrier/{calendrier}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Calendrier enregistrerCalendrier(@PathParam(value = "calendrier") Calendrier calendrier) throws Exception {
+        CalendrierRepository calendrierRepository = new CalendrierRepository();
+        calendrierRepository.persist(calendrier);
+        return calendrier;
+    }
+}

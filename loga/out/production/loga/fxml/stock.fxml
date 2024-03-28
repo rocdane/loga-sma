@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content" prefHeight="600.0" prefWidth="800.0" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.loga.app.controller.StockController">
+<opaqueInsets>
+    <Insets />
+</opaqueInsets>
+<children>
+      <TabPane id="stock-tab" fx:id="stock_tab" stylesheets="@../assets/css/style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+          <tabs>
+            <Tab fx:id="tab_achat" text="Approvisionner">
+              <content>
+                <AnchorPane fx:id="achat_tab_content">
+                     <children>
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <TextField fx:id="achat_description" prefHeight="40.0" prefWidth="1000.0" promptText="Description" GridPane.columnIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="achat_prix" prefHeight="40.0" prefWidth="1000.0" promptText="Prix" GridPane.columnIndex="5">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="achat_designation" editable="true" onKeyReleased="#chercher_article_achat" prefHeight="40.0" prefWidth="1000.0" promptText="Désignation" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </ComboBox>
+                                    <Button fx:id="ajouter_achat" alignment="CENTER" mnemonicParsing="false" onAction="#ajouter_achat" prefHeight="40.0" prefWidth="1000.0" text="Ajouter" GridPane.columnIndex="6">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-add.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="annuler_achat" alignment="CENTER" mnemonicParsing="false" onAction="#annuler_achat" prefHeight="40.0" prefWidth="1000.0" text="Annuler" GridPane.columnIndex="7">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="achat_quantite" prefHeight="40.0" prefWidth="1000.0" promptText="Quantité" GridPane.columnIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="achat_fournisseur" prefHeight="40.0" prefWidth="1000.0" promptText="Fournisseur">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="achat_categorie" editable="true" onKeyReleased="#chercher_article_achat" prefHeight="40.0" prefWidth="1000.0" promptText="Catégorie" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </ComboBox>
+                                 </children>
+                              </GridPane>
+                              <HBox onKeyReleased="#chercher_article_achat" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <TableView fx:id="table_achat" styleClass="table-achat" HBox.hgrow="SOMETIMES">
+                                      <columns>
+                                          <TableColumn fx:id="table_achat_id" prefWidth="75.0" text="Id" visible="false" />
+                                        <TableColumn fx:id="table_achat_date" minWidth="-1.0" prefWidth="-1.0" sortType="DESCENDING" text="Date" />
+                                        <TableColumn fx:id="table_achat_designation" prefWidth="75.0" text="Désignation" />
+                                          <TableColumn fx:id="table_achat_description" prefWidth="75.0" text="Description" />
+                                          <TableColumn fx:id="table_achat_quantite" prefWidth="75.0" text="Quantité" />
+                                          <TableColumn fx:id="table_achat_prix" prefWidth="75.0" text="Prix" />
+                                          <TableColumn fx:id="table_achat_montant" prefWidth="75.0" text="Montant" />
+                                          <TableColumn fx:id="table_achat_fournisseur" prefWidth="75.0" text="Fournisseur" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="stocker" mnemonicParsing="false" onAction="#stocker" prefHeight="40.0" prefWidth="200.0" text="Stocker">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-achat.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-achat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_vente" text="Vendre">
+              <content>
+                <AnchorPane fx:id="vente_tab_content">
+                     <children>
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="vente_description" prefHeight="40.0" prefWidth="1000.0" promptText="Description" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="vente_client" prefHeight="40.0" prefWidth="1000.0" promptText="Client">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="vente_designation" editable="true" onKeyReleased="#chercher_article_vente" prefHeight="40.0" prefWidth="1000.0" promptText="Désignation" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </ComboBox>
+                                    <Button fx:id="ajouter_vente" alignment="CENTER" mnemonicParsing="false" onAction="#ajouter_vente" prefHeight="40.0" prefWidth="1000.0" text="Ajouter" GridPane.columnIndex="5">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-add.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="annuler_vente" mnemonicParsing="false" onAction="#annuler_vente" prefHeight="40.0" prefWidth="1000.0" text="Annuler" GridPane.columnIndex="6">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="vente_quantite" prefHeight="40.0" prefWidth="1000.0" promptText="Quantité" GridPane.columnIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="vente_prix" prefHeight="40.0" prefWidth="1000.0" promptText="Prix" GridPane.columnIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <TableView fx:id="table_vente" styleClass="table-vente" HBox.hgrow="SOMETIMES">
+                                       <columns>
+                                          <TableColumn fx:id="table_vente_id" prefWidth="75.0" text="Id" visible="false" />
+                                          <TableColumn fx:id="table_vente_date" minWidth="-1.0" prefWidth="-1.0" sortType="DESCENDING" text="Date" />
+                                          <TableColumn fx:id="table_vente_designation" prefWidth="75.0" text="Désignation" />
+                                          <TableColumn fx:id="table_vente_description" prefWidth="75.0" text="Description" />
+                                          <TableColumn fx:id="table_vente_quantite" prefWidth="75.0" text="Quantité" />
+                                          <TableColumn fx:id="table_vente_prix" prefWidth="75.0" text="Prix" />
+                                          <TableColumn fx:id="table_vente_montant" prefWidth="75.0" text="Montant" />
+                                          <TableColumn fx:id="table_vente_client" prefWidth="75.0" text="Client" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="sortir" mnemonicParsing="false" onAction="#sortir" prefHeight="40.0" prefWidth="200.0" text="Sortir">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-vente.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-vente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+              <Tab fx:id="tab_stock" text="Stock">
+                  <content>
+                      <AnchorPane fx:id="stock_tab_content">
+                          <children>
+                              <VBox alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="20.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/img/icon/ico-search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="filtre" onKeyReleased="#filtrer" prefHeight="40.0" promptText="Entrer la désignation" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#annuler_recherche" prefHeight="40.0" prefWidth="1000.0" text="Annuler" GridPane.columnIndex="3">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#printStock" prefHeight="40.0" prefWidth="1000.0" text="Imprimer" GridPane.columnIndex="2">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-printer.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="table_article" onMouseClicked="#afficher_article" styleClass="table-stock" VBox.vgrow="SOMETIMES">
+                                <columns>
+                                  <TableColumn fx:id="table_article_id" prefWidth="75.0" text="Id" visible="false" />
+                                  <TableColumn fx:id="table_article_designation" prefWidth="75.0" text="Désignation" />
+                                    <TableColumn fx:id="table_article_description" prefWidth="75.0" text="Description" />
+                                    <TableColumn fx:id="table_article_quantite" prefWidth="75.0" text="Quantité" />
+                                    <TableColumn fx:id="table_article_prix" prefWidth="75.0" text="Prix" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children></VBox>
+                          </children>
+                  </AnchorPane>
+                  </content>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/main/stock.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+              </Tab>
+            <Tab fx:id="tab_article" text="Article">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="SOMETIMES">
+                                 <image>
+                                    <Image url="@../assets/img/main/stock.PNG" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" spacing="50.0" HBox.hgrow="SOMETIMES">
+                                 <children>
+                                    <Label text="Détails Article" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <GridPane VBox.vgrow="SOMETIMES">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="70.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Référence" />
+                                          <Label text="Catégorie" GridPane.rowIndex="1" />
+                                          <Label text="Désignation" GridPane.rowIndex="2" />
+                                          <Label text="Description" GridPane.rowIndex="3" />
+                                          <Label text="Prix" GridPane.rowIndex="4" />
+                                          <Label text="Quantité" GridPane.rowIndex="5" />
+                                          <TextField fx:id="article_reference" prefHeight="50.0" promptText="Référence" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="article_designation" prefHeight="50.0" promptText="Désignation" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="article_prix" prefHeight="50.0" promptText="Prix" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="article_quantite" disable="true" prefHeight="50.0" promptText="Quantité" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <ComboBox fx:id="article_categorie" prefHeight="50.0" prefWidth="1000.0" promptText="Catégorie" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <TextArea fx:id="article_description" prefHeight="500.0" prefWidth="1000.0" promptText="Description" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </TextArea>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                    <HBox alignment="CENTER" spacing="50.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#apply" prefHeight="50.0" prefWidth="120.0" text="Sauvegarder">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../assets/img/icon/ico-save.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#cancel_edit" prefHeight="50.0" prefWidth="120.0" text="Annuler">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-edit.PNG" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_ventes" text="Ventes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="15.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label prefHeight="40.0" text="Choisir les dates" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <DatePicker fx:id="ventes_date_debut" onAction="#ventes_date_debut" prefHeight="40.0" prefWidth="1000.0" promptText="Date début" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Button mnemonicParsing="false" onAction="#printVentes" prefHeight="40.0" prefWidth="1000.0" text="Imprimer" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-printer.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <DatePicker fx:id="ventes_date_fin" onAction="#ventes_date_fin" prefHeight="40.0" prefWidth="1000.0" promptText="Date fin" GridPane.columnIndex="2" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Button mnemonicParsing="false" onAction="#fermerVentes" prefHeight="40.0" prefWidth="1000.0" text="Fermer" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="table_ventes" styleClass="table-ventes" VBox.vgrow="SOMETIMES">
+                                 <columns>
+                                    <TableColumn fx:id="ventes_date" prefWidth="75.0" text="Date" />
+                                    <TableColumn fx:id="ventes_client" prefWidth="75.0" text="Client" />
+                                    <TableColumn fx:id="ventes_article" prefWidth="75.0" text="Article" />
+                                    <TableColumn fx:id="ventes_quantite" prefWidth="75.0" text="Quantité" />
+                                    <TableColumn fx:id="ventes_prix" prefWidth="75.0" text="Prix" />
+                                    <TableColumn fx:id="ventes_montant" prefWidth="75.0" text="Montant" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                                    <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <TextField fx:id="vente_total" editable="false" prefHeight="50.0" promptText="Total ventes (F CFA)" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label text="Total ventes" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tab_achats" text="Achats">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" percentWidth="10.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="15.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label prefHeight="40.0" text="Choisir les dates" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <DatePicker fx:id="achats_date_debut" onAction="#achats_date_debut" prefHeight="40.0" prefWidth="1000.0" promptText="Date début" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Button mnemonicParsing="false" onAction="#printAchats" prefHeight="40.0" prefWidth="1000.0" text="Imprimer" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-printer.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <DatePicker fx:id="achats_date_fin" onAction="#achats_date_fin" prefHeight="40.0" prefWidth="1000.0" promptText="Date fin" GridPane.columnIndex="2" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Button mnemonicParsing="false" onAction="#fermerAchats" prefHeight="40.0" prefWidth="1000.0" text="Fermer" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <TableView fx:id="table_achats" styleClass="table-achats" VBox.vgrow="SOMETIMES">
+                                 <columns>
+                                    <TableColumn fx:id="achats_date" prefWidth="75.0" text="Date" />
+                                    <TableColumn fx:id="achats_fournisseur" prefWidth="75.0" text="Fournisseur" />
+                                    <TableColumn fx:id="achats_article" prefWidth="75.0" text="Article" />
+                                    <TableColumn fx:id="achats_quantite" prefWidth="75.0" text="Quantité" />
+                                    <TableColumn fx:id="achats_prix" prefWidth="75.0" text="Prix" />
+                                    <TableColumn fx:id="achats_montant" prefWidth="75.0" text="Montant" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                                    <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <TextField fx:id="achat_total" editable="false" prefHeight="50.0" promptText="Total achats (F CFA)" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label text="Total achats" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-accountant.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+          </tabs>
+          <opaqueInsets>
+              <Insets />
+          </opaqueInsets>
+          <padding>
+              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+          </padding>
+      </TabPane>
+</children>
+</AnchorPane>

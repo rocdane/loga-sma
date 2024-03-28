@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane styleClass="main" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.loga.app.controller.GuiController">
+  <center>
+    <AnchorPane fx:id="content" cache="true" cacheHint="SCALE" prefHeight="600.0" prefWidth="1200.0" styleClass="main-content" stylesheets="@../assets/css/style.css" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <AnchorPane id="main-content" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+    </AnchorPane>
+  </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <top>
+      <AnchorPane fx:id="topMenuBar" prefHeight="40.0" prefWidth="800.0" styleClass="main-menu" stylesheets="@../assets/css/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" spacing="150.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text fx:id="navigation" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <Button id="link-messagerie" fx:id="link_profil" mnemonicParsing="false" onAction="#versProfil" style="-fx-background-color: red;" wrapText="true" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-profil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="link-messagerie" fx:id="link_messagerie" mnemonicParsing="false" onAction="#versMessagerie" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-messagerie.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="link-notification" fx:id="link_notification" mnemonicParsing="false" onAction="#versNotification" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-notification.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#help" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#logout" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane fx:id="leftMenuBar" styleClass="nav-bar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="leftMenuNav" alignment="CENTER" prefHeight="529.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #fdb553;" styleClass="nav-menu" stylesheets="@../assets/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="96.0" mnemonicParsing="false" onAction="#versDashboard" style="-fx-background-color: white;" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" prefHeight="51.0" prefWidth="50.0" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="menu-home">
+                                 <image>
+                                    <Image url="@../assets/img/logo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-atelier" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#versHome" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/icon/ico-home.PNG" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="menu-dossier" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="164.0" mnemonicParsing="false" onAction="#versDossier" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" contentDisplay="CENTER" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/main/dossier.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-automobile" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="323.0" mnemonicParsing="false" onAction="#versAutomobile" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="menu-home">
+                                 <image>
+                                    <Image url="@../assets/img/main/automobile.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-reception" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="42.0" mnemonicParsing="false" onAction="#versReception" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="50.0">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/main/reception.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button id="menu-agenda" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="332.0" mnemonicParsing="false" onAction="#versReparation" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" VBox.vgrow="SOMETIMES">
+                     <graphic>
+                        <Label alignment="CENTER" contentDisplay="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/img/main/reparation.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane fx:id="footerInfo" prefHeight="10.0" prefWidth="1300.0" styleClass="footer-text" stylesheets="@../assets/css/style.css">
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" layoutX="20.0" layoutY="7.0" prefHeight="27.0" prefWidth="1270.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LOGA 2.0.1 © GMC PLUS" textAlignment="RIGHT" textOrigin="BOTTOM" wrappingWidth="139.716796875" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

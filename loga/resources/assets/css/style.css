@@ -1,0 +1,135 @@
+.content{
+    -fx-background-color: white;
+    -fx-background-position: center center;
+}
+
+#main-content{
+    -fx-background-color: white;
+    -fx-background-size: 1366 768;
+    -fx-background-image: url("../img/logo.png");
+    -fx-background-position: center center;
+}
+
+.btn-menu{
+    -fx-background-color:whitesmoke;
+    -fx-background-size:auto;
+    -fx-size:inherit;
+}
+
+#menu-atelier:hover{
+    -fx-background-color:#c5cae9;
+}
+
+#menu-automobile:hover{
+    -fx-background-color:#ffffff;
+}
+
+#menu-admin:hover{
+    -fx-background-color:#ffffff;
+}
+
+#menu-article:hover{
+    -fx-background-color:#ff9695;
+}
+
+#menu-client:hover{
+    -fx-background-color:#fef285;
+}
+
+#menu-reception:hover{
+    -fx-background-color:#5a6e96;
+}
+
+#menu-reparation:hover{
+    -fx-background-color:#316b7f;
+}
+
+#menu-tresor:hover{
+    -fx-background-color:#f9e0a4;
+}
+
+.table-compte{
+-fx-background-image: url("../img/icon/ico-compte.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-bilan{
+-fx-background-image: url("../img/icon/ico-bilan.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-tresor{
+-fx-background-image: url("../img/icon/ico-tresor.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-solde{
+-fx-background-image: url("../img/icon/ico-solde.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-salaire{
+-fx-background-image: url("../img/icon/ico-billing.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-ventes{
+-fx-background-image: url("../img/icon/ico-sales.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-achats{
+-fx-background-image: url("../img/icon/ico-accountant.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-vente{
+-fx-background-image: url("../img/icon/ico-vente.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-achat{
+-fx-background-image: url("../img/icon/ico-achat.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+.table-stock{
+-fx-background-image: url("../img/main/stock.png");
+-fx-background-repeat: no-repeat;
+-fx-background-size: 200px 200px;
+-fx-background-position: center center;
+}
+
+#menu-agenda:hover{
+    -fx-background-color:#95a5a6;
+}
+
+#menu-dossier:hover{
+    -fx-background-color:#e2b369;
+}
+
+#menu-profil:hover{
+    -fx-background-color:#906e4d;
+}
+
+#menu-stock:hover{
+    -fx-background-color:#f7db7b;
+}

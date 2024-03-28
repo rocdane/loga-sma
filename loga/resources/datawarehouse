@@ -1,0 +1,89 @@
+Datamarts : direction
+
+        - automobile par marque
+            * dimensions : marque,modele,periode
+            * mesures : date_pmec
+
+        - profile par service
+            * dimensions : service,titre,periode
+            * mesures : date_ajout
+
+        - evaluation par profile
+            * dimensions : profile,critere,periode
+            * mesures : date_evaluation,note
+
+        - reparation par profile
+            * dimensions : profile,periode
+            * mesures : date_reparation
+
+        - reception par profile
+            * dimensions : profile,periode
+            * mesures : date_reception
+
+        - diagnostic par profile
+            * dimensions : profile,periode
+            * mesures : date_diagnostic
+
+Datamarts : atelier
+
+	# faits :
+
+        - etat par automobile
+            * dimensions : profile,reception,automobile,marque,modele,client,type,periode
+            * mesures : date_reception,libelle_etat
+
+		- defaut par automobile
+			* dimensions : profile,diagnostic,automobile,marque,modele,client,type,periode
+			* mesures : code_defaut,diagnostic_dysfonctionnement,date_diagnostic
+
+        - solution par automobile
+            * dimensions : profile,diagnostic,automobile,marque,modele,client,type,periode
+            * mesures : code_solution,diagnostic_dysfonctionnement,date_diagnostic
+
+		- tache par automobile
+			* dimensions : profile,reparation,automobile,marque,modele,client,type,periode
+			* mesures : montant_tache,total_tache,date_reparation
+
+        - fourniture par automobile
+            * dimensions : profile,reparation,automobile,marque,modele,client,type,periode
+            * mesures : montant_fourniture,total_fourniture,date_reparation
+
+		- commande par automobile
+			* dimensions : fournisseur,fourniture,reparation,automobile,client,type,periode
+			* mesures : montant_commande,quantite_commande,date_commande
+
+		- livraison par automobile
+		    * dimensions : commande,fourniture,reparation,automobile,client,type,periode
+		    * mesures : montant_livraison,quantite_livraison,date_livraison
+
+Datamarts : vente
+
+	# faits :
+
+        - achat par article
+			* dimensions : article,periode
+			* mesures : montant_achat,quantite_achat,date_achat
+
+		- vente par article
+			* dimensions : article,periode
+			* mesures : montant_vente,quantite_vente,date_vente
+
+Datamarts : finance
+
+	# faits :
+
+		- versement par client
+			* dimensions : reparation,automobile,client,type,periode
+			* mesures : total_reparation,montant_versement,nbre_versement,date_versement
+
+		- depense par période
+			* dimensions : tresor,periode
+			* mesures : montant_depense,date_depense
+
+		- recette par période
+			* dimensions : tresor,periode
+			* mesures : montant_recette,date_recette
+
+		- salaire par profile
+			* dimensions : profile,periode
+			* mesures : date_salaire,montant_salaire

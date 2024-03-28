@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.loga.app.controller.DashboardController">
+   <children>
+      <TabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Tableau de bord">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <VBox alignment="CENTER" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profils">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/profil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_profil" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clients">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/client.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_client" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Véhicules">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/automobile.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_automobile" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Réparations">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/reparation.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_reparation" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <BarChart fx:id="chart_reparation" title="Réparations par période">
+                                <xAxis>
+                                  <CategoryAxis fx:id="chart_reparation_x" label="Période" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis fx:id="chart_reparation_y" label="Montant (F CFA)" side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-bilan.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="Statistiques">
+              <content>
+                <AnchorPane>
+                     <children>
+                        <VBox alignment="TOP_CENTER" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" spacing="100.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Articles">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/stock.PNG" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_article" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="224.0" layoutY="10.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Commandes">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-achat.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_commande" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="371.0" layoutY="10.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ventes">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-vente.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_vente" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <BarChart fx:id="chart_vente" title="Ventes par période" VBox.vgrow="SOMETIMES">
+                                 <xAxis>
+                                    <CategoryAxis fx:id="chart_vente_x" label="Période" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="chart_vente_y" label="Montant (F CFA)" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="Flux de trésoreries">
+              <content>
+                <AnchorPane>
+                     <children>
+                        <VBox spacing="50.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" spacing="100.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Versements">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-solde.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_versement" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salaires">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-billing.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_salaire" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dépenses">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/icon/ico-compte.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_depense" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <AreaChart fx:id="chart_cashflow" title="Flux financier par période">
+                                 <xAxis>
+                                    <CategoryAxis fx:id="chart_cashflow_x" label="Période " side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="chart_cashflow_y" label="Montant (F CFA)" side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icon/ico-accountant.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
